@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Check if PYFILE is set
+if [ -z "$PYFILE" ]; then
+  echo "Environment variable PYFILE is not set."
+  exit 1
+fi
+
+# Compile the Python file
+python -m py_compile "$PYFILE"
+
+# Rename the compiled file
+compiled_file="${PYFILE}c"
+mv "${PYFILE}c" "$compiled_file"
+
+echo "Compiled file created: $compiled_file"
