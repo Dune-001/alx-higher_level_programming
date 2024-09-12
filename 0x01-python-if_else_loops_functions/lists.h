@@ -3,7 +3,7 @@
 /**
  * struct listint_s - singly linked list
  * @n: integer
- * @next: points to next node
+ * @next: points to the next node
  */
 typedef struct listint_s
 {
@@ -11,6 +11,7 @@ typedef struct listint_s
     struct listint_s *next;
 } listint_t;
 
-int check_cycle(listint_t *list);
-
+listint_t *insert_node(listint_t **head, int number);
+void print_list(const listint_t *head);
+listint_t *create_node(int number);
 #endif
